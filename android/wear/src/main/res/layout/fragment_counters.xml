@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".views.CountersFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="12dp"
+            android:orientation="vertical"
+            android:weightSum="0.5">
+
+            <TextView
+                android:id="@+id/stat1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/stat1_color"
+                android:textSize="18sp"
+                android:weightSum="0.5" />
+
+            <TextView
+                android:id="@+id/stat1Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/text_label_font_size"
+                android:weightSum="0.5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="0.5">
+
+            <TextView
+                android:id="@+id/stat2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/stat2_color"
+                android:textSize="18sp"
+                android:weightSum="0.5" />
+
+            <TextView
+                android:id="@+id/stat2Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_label"
+                android:textSize="@dimen/text_label_font_size"
+                android:textStyle="normal"
+                android:weightSum="0.5" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<resources>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="app_name">Table Tennis Technique</string>
+    <string name="backhand_drive">Backhand Drive</string>
+    <string name="forehand_drive">Forehand Drive</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="active_time">Active Time</string>
+    <string name="resume">Resume</string>
+    <string name="stop">Stop</string>
+    <string name="drive">Drive</string>
+    <string name="drive_count">Drive count</string>
+    <string name="count">Count</string>
+    <string name="loop">Loop</string>
+    <string name="loop_count">Loop Count</string>
+    <string name="loop_drive">Loop/Drive</string>
+    <string name="loop_drive_count">Loop/Drive Count</string>
+    <string name="avg_peak_acceleration">Avg. Peak Acceleration</string>
+    <string name="ms2">m/s2</string>
+    <string name="mph">mph</string>
+    <string name="summary">Summary</string>
+    <string name="forward">Forward</string>
+    <string name="forward_count">Forward count</string>
+    <string name="rescue">Rescue</string>
+    <string name="rescue_count">Rescue Count</string>
+    <string name="select_exercise">Select an Exercise</string>
+    <string name="h_m_s">h:m:s</string>
+    <string name="loading">Initializing &#8230;</string>
+    <string-array name="tabletennis_exercises">
+        <item>Backhand Drive</item>
+        <item>Forehand Drive</item>
+        <!--<item>Backhand Loop</item>-->
+        <!--<item>Forehand Loop</item>-->
+    </string-array>
+    <string name="calibration_error_msg">Sorry, sensors required for this app to accurately track Table Tennis strokes in real time are not available at high accuracy on this device.</string>
+</resources>
