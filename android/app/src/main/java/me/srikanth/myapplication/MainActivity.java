@@ -77,6 +77,13 @@ public class MainActivity extends AppCompatActivity implements
         Log.d(TAG, "onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //@todo remove
+        // Redirect to React Native
+        Intent reactNativeIntent = new Intent(this, MyReactActivity.class);
+        startActivity(reactNativeIntent);
+        //@todo remove
+
         mInformationTextView = findViewById(R.id.information_text_view);
         mRemoteOpenButton = findViewById(R.id.remote_open_button);
 
@@ -207,6 +214,10 @@ public class MainActivity extends AppCompatActivity implements
             mInformationTextView.setText(getString(R.string.wear_app_installed_some_devices));
             mRemoteOpenButton.setVisibility(View.VISIBLE);
 
+            // Redirect to React Native
+            Intent reactNativeIntent = new Intent(this, MainApplication.class);
+            startActivity(reactNativeIntent);
+
         } else {
             // TODO: Add your code to communicate with the wear app(s) via
             // Wear APIs (MessageApi, DataApi, etc.)
@@ -214,6 +225,10 @@ public class MainActivity extends AppCompatActivity implements
             Log.d(TAG, getString(R.string.wear_app_installed_all_devices));
             mInformationTextView.setText(getString(R.string.wear_app_installed_all_devices));
             mRemoteOpenButton.setVisibility(View.INVISIBLE);
+
+            // Redirect to React Native
+            Intent reactNativeIntent = new Intent(this, MainApplication.class);
+            startActivity(reactNativeIntent);
 
         }
     }

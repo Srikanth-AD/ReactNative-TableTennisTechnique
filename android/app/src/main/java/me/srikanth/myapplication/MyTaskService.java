@@ -1,0 +1,28 @@
+package me.srikanth.myapplication;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+import com.facebook.react.HeadlessJsTaskService;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.jstasks.HeadlessJsTaskConfig;
+
+public class MyTaskService extends HeadlessJsTaskService {
+
+    @Nullable
+    protected HeadlessJsTaskConfig getTaskConfig(Intent intent) {
+        Bundle extras = intent.getExtras();
+        if (extras != null) {
+            HeadlessJsTaskService.acquireWakeLockNow(getApplicationContext());
+            return new HeadlessJsTaskConfig(
+                    "SomeTaskName",
+                    Arguments.fromBundle(extras),
+                    3000, // timeout for the task
+                    false // optional: defines whether or not  the task is allowed in foreground. Default is false
+            );
+
+        }
+        return null;
+    }
+}

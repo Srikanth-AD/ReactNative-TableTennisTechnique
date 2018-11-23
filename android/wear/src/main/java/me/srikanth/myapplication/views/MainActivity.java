@@ -40,7 +40,7 @@ public class MainActivity extends FragmentActivity implements
         AmbientModeSupport.AmbientCallbackProvider,
         CapabilityClient.OnCapabilityChangedListener {
 
-    private SharedViewModel mModel;
+    //private SharedViewModel mModel;
     SensorManager mSensorManager;
     SensorEventListener _SensorEventListener;
     boolean areSensorsWorking = false;
@@ -77,7 +77,7 @@ public class MainActivity extends FragmentActivity implements
         // Enables Ambient mode.
         AmbientModeSupport.attach(this);
 
-        mModel = ViewModelProviders.of(this).get(SharedViewModel.class);
+        //mModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         listview = findViewById(R.id.exercise_list);
         mSensorManager = ((SensorManager) getSystemService(SENSOR_SERVICE));
         sensorsLowAccuracyTextView =  findViewById(R.id.sensorsLowAccuracy);

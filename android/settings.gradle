@@ -1,1 +1,2 @@
 include ':app', ':wear'
+rootProject.name = 'TableTennisTechnique'
