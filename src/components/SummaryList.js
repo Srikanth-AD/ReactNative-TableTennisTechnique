@@ -35,6 +35,7 @@ class SummaryList extends Component {
   render() {
     return (
       <ListView
+        style={{backgroundColor: '#f3f3f3'}}
         enableEmptySections
         dataSource={this.dataSource}
         renderRow={this.renderRow}

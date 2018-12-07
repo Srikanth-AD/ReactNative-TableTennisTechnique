@@ -14,7 +14,7 @@ const RouterComponent = () => {
           <Scene
             key="summaryList"
             component={SummaryList}
-            title="Summaries"
+            title="Practice Summaries"
             initial
           />
         </Scene>
