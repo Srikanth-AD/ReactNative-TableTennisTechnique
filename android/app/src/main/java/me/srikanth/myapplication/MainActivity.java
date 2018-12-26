@@ -72,6 +72,12 @@ public class MainActivity extends AppCompatActivity implements
         }
     };
 
+    // Redirect to React Native
+    private void startReactNativeActivity() {
+        Intent reactNativeIntent = new Intent(this, MyReactActivity.class);
+        startActivity(reactNativeIntent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate()");
@@ -79,9 +85,7 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
 
         //@todo remove
-        // Redirect to React Native
-        Intent reactNativeIntent = new Intent(this, MyReactActivity.class);
-        startActivity(reactNativeIntent);
+        startReactNativeActivity();
         //@todo remove
 
         mInformationTextView = findViewById(R.id.information_text_view);
@@ -215,8 +219,7 @@ public class MainActivity extends AppCompatActivity implements
             mRemoteOpenButton.setVisibility(View.VISIBLE);
 
             // Redirect to React Native
-            Intent reactNativeIntent = new Intent(this, MainApplication.class);
-            startActivity(reactNativeIntent);
+            startReactNativeActivity();
 
         } else {
             // TODO: Add your code to communicate with the wear app(s) via
@@ -227,8 +230,7 @@ public class MainActivity extends AppCompatActivity implements
             mRemoteOpenButton.setVisibility(View.INVISIBLE);
 
             // Redirect to React Native
-            Intent reactNativeIntent = new Intent(this, MainApplication.class);
-            startActivity(reactNativeIntent);
+            startReactNativeActivity();
 
         }
     }

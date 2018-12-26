@@ -1,6 +1,7 @@
 import {
   PASSWORD_CHANGED,
   EMAIL_CHANGED,
+  FORGOT_PASSWORD_EMAIL_CHANGED,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAIL,
   LOGIN_USER
@@ -12,6 +13,13 @@ import '@firebase/auth';
 export const emailChanged = (text) => {
   return {
     type: EMAIL_CHANGED,
+    payload: text
+  };
+};
+
+export const forgotPasswordEmailChanged = (text) => {
+  return {
+    type: FORGOT_PASSWORD_EMAIL_CHANGED,
     payload: text
   };
 };
@@ -61,5 +69,5 @@ const loginUserSuccess = (dispatch, user) => {
     payload: user
   });
 
-  Actions.main();
+  Actions.reset("main");
 };

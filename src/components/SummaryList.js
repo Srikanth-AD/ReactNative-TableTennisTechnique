@@ -34,7 +34,6 @@ const mapStateToProps = state => {
   const summaries = _.map(state.summaries, (val, uid) => {
     return { ...val, uid };
   });
-  console.log(summaries);
   return { summaries };
 };
 

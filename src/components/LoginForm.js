@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardSection, Input, Button, Spinner } from './common';
+import { Card, CardSection, Input, Button, Spinner, Header } from './common';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { connect } from 'react-redux';
-import { Text, View} from 'react-native';
+import { Text, TouchableHighlight, Alert, View} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 class LoginForm extends Component {
@@ -24,6 +24,10 @@ class LoginForm extends Component {
     );
   }
 
+  onForgotPasswordButtonPress() {
+    Actions.push("forgotPassword");
+  }
+
   onButtonPress() {
     const {email, password} = this.props;
     this.props.loginUser({email, password});
@@ -41,31 +45,40 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label="Email"
-            placeholder="user@example.com"
-            onChangeText={this.onEmailChange.bind(this)}
-            value={this.props.email}
-          />
-        </CardSection>
+      <View>
+        <Card>
+          <CardSection>
+            <Input
+              label="Email"
+              placeholder="user@example.com"
+              onChangeText={this.onEmailChange.bind(this)}
+              value={this.props.email}
+            />
+          </CardSection>
+          <CardSection>
+            <Input
+              onChangeText={this.onPasswordChange.bind(this)}
+              secureTextEntry label="Password"
+              placeholder="password"
+              value={this.props.password}
+            />
+          </CardSection>
+          {this.renderError()}
+          <CardSection>
+            {this.renderButton()}
+          </CardSection>
+        </Card>
 
-        <CardSection>
-          <Input
-            onChangeText={this.onPasswordChange.bind(this)}
-            secureTextEntry label="Password"
-            placeholder="password"
-            value={this.props.password}
-          />
-        </CardSection>
-
-        {this.renderError()}
-
-        <CardSection>
-          {this.renderButton()}
-        </CardSection>
-      </Card>
+        <View style={{ height: 30}}>
+          <TouchableHighlight
+              style={{flex: 1, alignSelf: 'stretch', marginTop: 10,
+                paddingRight: 8}}
+              onPress={this.onForgotPasswordButtonPress}>
+                <Text style={{textDecorationLine: 'underline', color: '#007AFF',
+                  fontSize: 18, alignSelf: 'flex-end'}}>Forgot Password?</Text>
+          </TouchableHighlight>
+        </View>
+      </View>
     )
   }
 }

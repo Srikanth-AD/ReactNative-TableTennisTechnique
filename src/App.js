@@ -17,22 +17,6 @@ import Router from './Router';
 type Props = {};
 export default class App extends Component<Props> {
 
-  componentWillMount() {
-    if (!firebase.apps.length) {
-
-      FirebaseInit();
-
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          console.log("app init: user email", user.email);
-          Actions.main();
-        } else {
-          console.log("app init: no user");
-        }
-      });
-    }
-  }
-
   render() {
     return (
       <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
